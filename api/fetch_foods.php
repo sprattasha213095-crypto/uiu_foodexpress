@@ -1,36 +1,51 @@
 <?php
-include "db.php";
+include 'db.php';
+header('Content-Type: application/json');
 
-// Get filter inputs from query string
-$canteen = isset($_GET['canteen']) ? $_GET['canteen'] : '';
-$price = isset($_GET['price']) ? $_GET['price'] : '';
+$canteen_id = isset($_GET['canteen_id']) ? intval($_GET['canteen_id']) : 0;
+$price = isset($_GET['price']) ? floatval($_GET['price']) : 500;
 
-// Build SQL query
-$query = "
-  SELECT f.*, c.name AS canteen_name
-  FROM foods f
-  JOIN canteens c ON f.canteen_id = c.id
-  WHERE f.available = 'Yes'
+$sql = "
+SELECT 
+  f.id,
+  f.canteen_id,
+  f.name,
+  f.description,
+  f.price,
+  f.image,
+  c.name AS canteen_name
+FROM food_items f
+LEFT JOIN canteens c ON f.canteen_id = c.id
+WHERE f.price <= ?
 ";
 
-// Apply filters if selected
-if (!empty($canteen)) {
-  $query .= " AND c.name = '" . $conn->real_escape_string($canteen) . "'";
+if ($canteen_id > 0) {
+  $sql .= " AND f.canteen_id = ?";
 }
 
-if (!empty($price)) {
-  $query .= " AND f.price <= " . (float)$price;
+$sql .= " ORDER BY f.id DESC";
+
+$stmt = $conn->prepare($sql);
+
+if (!$stmt) {
+  echo json_encode(["error" => "Prepare failed: " . $conn->error]);
+  exit;
 }
 
-$query .= " ORDER BY c.name ASC, f.price ASC";
+if ($canteen_id > 0) {
+  $stmt->bind_param("di", $price, $canteen_id);
+} else {
+  $stmt->bind_param("d", $price);
+}
 
-$result = $conn->query($query);
+$stmt->execute();
+$result = $stmt->get_result();
 
 $foods = [];
+
 while ($row = $result->fetch_assoc()) {
   $foods[] = $row;
 }
 
-// Return JSON
 echo json_encode($foods);
 ?>
