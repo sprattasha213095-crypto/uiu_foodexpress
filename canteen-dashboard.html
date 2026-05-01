@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Canteen Dashboard | UIU FoodExpress</title>
+  <link rel="stylesheet" href="css/canteen.css">
+</head>
+<body>
+  <header class="topbar">
+    <h2>Canteen Manager Dashboard</h2>
+    <button onclick="window.location.href='api/logout.php'">Logout</button>
+  </header>
+
+  <main>
+    <section class="add-section">
+      <button id="showAddForm">+ Add Product</button>
+      <form id="addProductForm" enctype="multipart/form-data" style="display:none;">
+        <input type="text" name="name" placeholder="Product Name" required>
+        <textarea name="description" placeholder="Description"></textarea>
+        <input type="number" name="price" placeholder="Price" required>
+        <input type="file" name="image" accept="image/*" required>
+        <input type="hidden" name="canteen_id" value="1">
+        <button type="submit" class="save-btn">Add Product</button>
+      </form>
+    </section>
+
+    <section class="orders">
+      <h3>Active Orders</h3>
+      <table id="orderTable">
+        <thead><tr><th>ID</th><th>User</th><th>Total</th><th>Status</th><th>Assign</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="js/canteen.js"></script>
+</body>
+</html>

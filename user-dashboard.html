@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Dashboard | UIU FoodExpress</title>
+  <link rel="stylesheet" href="css/user.css">
+</head>
+<body>
+  <header class="topbar">
+    <h2>My Orders – UIU FoodExpress</h2>
+    <button onclick="window.location.href='api/logout.php'">Logout</button>
+  </header>
+
+  <main>
+    <section>
+      <h3>Current Orders</h3>
+      <table id="userOrders">
+        <thead><tr><th>ID</th><th>Canteen</th><th>Total</th><th>Status</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section id="reviews">
+      <h3>Leave a Review</h3>
+      <form id="reviewForm" class="review-form">
+        <select name="order_id" required></select>
+        <div class="stars" id="starBox">
+          <span class="star" data-val="1">★</span>
+          <span class="star" data-val="2">★</span>
+          <span class="star" data-val="3">★</span>
+          <span class="star" data-val="4">★</span>
+          <span class="star" data-val="5">★</span>
+        </div>
+        <textarea name="comment" placeholder="Write your review..."></textarea>
+        <input type="hidden" name="rating" id="ratingVal">
+        <button type="submit" id="submitReview">Submit Review</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="js/user.js"></script>
+</body>
+</html>

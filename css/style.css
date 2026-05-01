@@ -1,0 +1,483 @@
+/* ===== Global Colors ===== */
+:root {
+  --primary: #f26b1d;
+  --light: #fffdf8;
+  --dark: #333;
+}
+
+/* ===== Reset & Global ===== */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: var(--light);
+  color: var(--dark);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--primary);
+  padding: 12px 40px;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.logo p {
+  margin: 0;
+  font-size: 13px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.login-btn {
+  background: white;
+  color: var(--primary);
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.login-btn:hover {
+  background: #ffe0c9;
+}
+
+.cart-icon {
+  font-size: 22px;
+}
+
+/* ===== Hero ===== */
+.hero {
+  text-align: center;
+  padding: 20px ;
+  background: linear-gradient(to bottom, #fff7ef, #ffffff);
+}
+
+.hero h2 {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.hero span {
+  color: var(--primary);
+}
+
+/* ===== Filter Section ===== */
+.filters {
+  position: relative;
+  background: url('../images/foodcanteen.png') center/cover no-repeat;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter-box {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.filter-box select,
+.filter-box input[type="range"] {
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.filter-box button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.filter-box button:hover {
+  background: #d95b12;
+}
+
+/* Order Now Button */
+.order-btn {
+  position: absolute;
+  bottom: 25px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(242,107,29, 0.5); }
+  70% { box-shadow: 0 0 0 12px rgba(242,107,29, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(242,107,29, 0); }
+}
+
+/* ===== Food List ===== */
+/* ===== Food List & Cards ===== */
+.food-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+}
+
+/* Each food card will now have a fixed structure */
+.food-card {
+  width: 250px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: 0.3s;
+  position: relative;
+  height: 380px; /* FIX: consistent height for all cards */
+}
+
+.food-card:hover {
+  transform: translateY(-4px);
+}
+
+.food-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.food-card .content {
+  flex: 1;
+  padding: 10px 14px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.food-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+.food-card p {
+  font-size: 13px;
+  color: #555;
+  margin: 2px 0;
+  line-height: 1.3em;
+}
+
+.price {
+  color: #f26b1d;
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+/* FIX: Keep Add to Cart at bottom center of every card */
+.add-btn {
+  background: #f26b1d;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 0 0 10px 10px;
+  font-weight: 600;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transition: background 0.3s ease;
+}
+
+.add-btn:hover {
+  background: #d95b12;
+}
+
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  background: var(--primary);
+  color: white;
+  padding: 15px;
+  margin-top: 30px;
+}
+/* ===== Cart Panel ===== */
+.cart-panel {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 350px;
+  height: 100%;
+  background: #fffdfc;
+  box-shadow: -3px 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  transition: right 0.4s ease;
+  z-index: 999;
+  overflow-y: auto;
+  border-left: 2px solid #f26b1d;
+}
+
+.cart-panel.active {
+  right: 0;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #f26b1d;
+}
+
+.close-cart {
+  font-size: 22px;
+  cursor: pointer;
+}
+
+#cartItems {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+#cartItems li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-item-img {
+  width: 45px;
+  height: 45px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.cart-item-info {
+  flex: 1;
+}
+
+.cart-item-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.cart-item-price {
+  color: #f26b1d;
+  font-size: 13px;
+}
+
+.cart-total {
+  text-align: right;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0;
+}
+
+.confirm-btn {
+  background: #f26b1d;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.confirm-btn:hover {
+  background: #d95b12;
+}
+/* ===== Cart Count Badge ===== */
+.cart-icon-wrapper {
+  position: relative;
+  font-size: 22px;
+  cursor: pointer;
+}
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: #f26b1d;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-weight: 600;
+}
+
+/* ===== Modal Popup ===== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+.modal-content {
+  background: #fff;
+  margin: 5% auto;
+  padding: 25px;
+  border-radius: 12px;
+  width: 400px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  animation: popup 0.3s ease;
+  text-align: center;
+}
+@keyframes popup {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.close {
+  float: right;
+  font-size: 28px;
+  color: #aaa;
+  cursor: pointer;
+}
+.close:hover {
+  color: #f26b1d;
+}
+
+/* ===== Cart Items ===== */
+#cartItems {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+#cartItems li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid #f3f3f3;
+}
+.cart-item-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.cart-item-img {
+  width: 45px;
+  height: 45px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+.cart-item-info {
+  text-align: left;
+}
+.cart-item-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+.cart-item-price {
+  font-size: 13px;
+  color: #f26b1d;
+}
+.remove-btn {
+  background: none;
+  border: none;
+  color: #d9534f;
+  font-size: 16px;
+  cursor: pointer;
+}
+.remove-btn:hover {
+  color: #a00000;
+}
+.cart-total {
+  text-align: right;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0 15px;
+}
+
+/* ===== Centered Delivery Form ===== */
+.delivery-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+}
+.delivery-form input {
+  width: 85%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  text-align: center;
+  transition: 0.2s;
+}
+.delivery-form input:focus {
+  border-color: #f26b1d;
+  outline: none;
+  box-shadow: 0 0 5px rgba(242,107,29,0.3);
+}
+.confirm-btn {
+  background: #f26b1d;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  width: 90%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.confirm-btn:hover {
+  background: #d95b12;
+}
+

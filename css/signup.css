@@ -1,0 +1,149 @@
+/* ===== Global Page Setup ===== */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #fdfdfd;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  display: flex;
+  align-items: center;
+  background: #f26b1d;
+  color: white;
+  padding: 12px 40px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.logo div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* left align */
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.logo p {
+  margin: 0;
+  font-size: 13px;
+}
+
+/* ===== Signup Section ===== */
+.signup-section {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+}
+
+/* ===== Signup Box ===== */
+.signup-box {
+  width: 300px;
+  background: #fff;
+  padding: 25px 25px 30px 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.signup-box h2 {
+  color: #f26b1d;
+  margin: 5px 0 20px 0;
+  font-size: 22px;
+}
+
+/* ===== Form Layout ===== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+label {
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+  font-size: 13px;
+}
+
+input, select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 13px;
+  transition: 0.2s;
+}
+
+input:focus, select:focus {
+  border-color: #f26b1d;
+  outline: none;
+  box-shadow: 0 0 4px rgba(242,107,29,0.3);
+}
+
+/* ===== Error Message ===== */
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: -5px;
+  display: none;
+}
+
+/* ===== Signup Button ===== */
+.signup-btn {
+  background: #f26b1d;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 12px;
+}
+
+.signup-btn:hover {
+  background: #d95b12;
+}
+
+/* ===== Text & Links ===== */
+p {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+a {
+  color: #f26b1d;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* ===== Footer ===== */
+footer {
+  background: #f26b1d;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  font-size: 14px;
+  margin-top: auto;
+}

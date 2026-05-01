@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard | UIU FoodExpress</title>
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <header class="topbar">
+    <h2>UIU FoodExpress – Admin Dashboard</h2>
+    <button onclick="window.location.href='api/logout.php'">Logout</button>
+  </header>
+
+  <main>
+    <div class="stats">
+      <div class="card"><h3>Total Users</h3><p id="totalUsers">0</p></div>
+      <div class="card"><h3>Total Canteens</h3><p id="totalCanteens">0</p></div>
+      <div class="card"><h3>Total Orders</h3><p id="totalOrders">0</p></div>
+    </div>
+
+    <section class="panel">
+      <h3>All Orders</h3>
+      <table id="ordersTable">
+        <thead><tr><th>ID</th><th>User</th><th>Canteen</th><th>Total</th><th>Status</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>

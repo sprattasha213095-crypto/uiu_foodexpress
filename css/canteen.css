@@ -1,0 +1,88 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f5f6f8;
+  color: #253858;
+  margin: 0;
+}
+
+.topbar {
+  background: #f97316;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 25px;
+}
+
+main {
+  padding: 20px;
+}
+
+.add-section {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+
+.add-section button {
+  background: #f97316;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+.add-section button:hover { background: #d97706; }
+
+#addProductForm {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#addProductForm input,
+#addProductForm textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+.save-btn {
+  background: #253858;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.save-btn:hover { background: #1b2c4f; transform: scale(1.03); }
+
+.orders {
+  background: white;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th {
+  background: #253858;
+  color: white;
+  padding: 8px;
+}
+td {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+tr:nth-child(even) { background: #fafafa; }
+tr:hover { background: #fff6ee; }
+
+select {
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}

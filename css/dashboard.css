@@ -1,0 +1,243 @@
+/* ==========================================================
+   UIU FoodExpress - Admin Dashboard Stylesheet
+   Theme: Orange (#f97316) & Navy (#253858)
+   Design: Clean | Modern | Professional
+   ========================================================== */
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f8f9fb;
+  color: #253858;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* ===================== Navbar ===================== */
+.navbar {
+  background: #253858;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar h1 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.navbar a.logout-btn {
+  background: #f97316;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.navbar a.logout-btn:hover {
+  background: #e45d0b;
+}
+
+/* ===================== Tabs ===================== */
+.tab-container {
+  width: 95%;
+  max-width: 1100px;
+  margin: 30px auto 60px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.tab-buttons {
+  display: flex;
+  background: #f2f4f8;
+  border-bottom: 2px solid #f97316;
+}
+
+.tab-buttons button {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #253858;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-buttons button:hover {
+  background: rgba(249, 115, 22, 0.1);
+}
+
+.tab-buttons button.active {
+  background: #f97316;
+  color: #fff;
+}
+
+.tab-content {
+  display: none;
+  padding: 25px 30px;
+  background: #fff;
+  animation: fadeIn 0.4s ease;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===================== Headings ===================== */
+h2, h3 {
+  color: #253858;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+/* ===================== Forms ===================== */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+input, select {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  min-width: 180px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus, select:focus {
+  border-color: #f97316;
+  box-shadow: 0 0 5px rgba(249, 115, 22, 0.4);
+  outline: none;
+}
+
+button {
+  background: #f97316;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+button:hover {
+  background: #e45d0b;
+  transform: translateY(-2px);
+}
+
+/* ===================== Tables ===================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 0.95rem;
+}
+
+table th {
+  background: #f97316;
+  color: white;
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid #e25f0b;
+}
+
+table td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+table tr:hover {
+  background: #fff3e9;
+  transition: background 0.3s;
+}
+
+.delete-btn {
+  background: #dc2626;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.delete-btn:hover {
+  background: #b91c1c;
+}
+
+/* ===================== Section Layouts ===================== */
+#canteens h2, #reports h2 {
+  border-left: 4px solid #f97316;
+  padding-left: 10px;
+}
+
+#reports table {
+  margin-bottom: 25px;
+}
+
+/* ===================== Responsive ===================== */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .tab-buttons button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  table th, table td {
+    font-size: 0.9rem;
+  }
+
+  form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  input, select, button {
+    width: 100%;
+  }
+}
+
+/* ===================== Footer (optional future use) ===================== */
+footer {
+  background: #253858;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+  font-size: 14px;
+}

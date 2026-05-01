@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Staff Signup | UIU FoodExpress</title>
+  <link rel="stylesheet" href="css/signup.css" />
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <nav class="navbar">
+    <div class="logo" onclick="window.location.href='index.html'" style="cursor: pointer;">
+      <img src="images/logo.png" alt="UIU Logo" />
+      <div>
+        <h1>UIU FoodExpress</h1>
+        <p>University Canteen</p>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== Signup Section ===== -->
+  <section class="signup-section">
+    <div class="signup-box">
+      <h2>Staff Registration</h2>
+      <form id="signupForm">
+        <label for="signupRole">Select Role:</label>
+        <select id="signupRole" required>
+          <option value="">-- Select Role --</option>
+          <option value="admin">Admin</option>
+          <option value="user">User</option>
+          <option value="manager">Canteen Manager</option>
+          <option value="delivery">Delivery Person</option>
+        </select>
+
+        <label for="signupName">Full Name:</label>
+        <input type="text" id="signupName" required placeholder="Enter your full name">
+
+        <label for="signupEmail">Email:</label>
+        <input type="email" id="signupEmail" required placeholder="Enter your email">
+
+        <label for="signupPassword">Password:</label>
+        <input type="password" id="signupPassword" required placeholder="Create password">
+
+        <label for="signupConfirmPassword">Confirm Password:</label>
+        <input type="password" id="signupConfirmPassword" required placeholder="Confirm password">
+
+        <p id="passwordError" class="error-message"></p>
+
+        <button type="submit" class="signup-btn">Sign Up</button>
+
+        <p>Already have an account? <a href="login.html">Login</a></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>© 2025 UIU FoodExpress | All Rights Reserved</p>
+  </footer>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>
