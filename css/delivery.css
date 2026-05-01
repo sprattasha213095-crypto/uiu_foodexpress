@@ -1,0 +1,52 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f5f6f8;
+  color: #253858;
+  margin: 0;
+}
+
+.topbar {
+  background: #f97316;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 25px;
+}
+
+.status-toggle {
+  background: white;
+  margin: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+
+select {
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.orders {
+  background: white;
+  margin: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th {
+  background: #253858;
+  color: white;
+  padding: 8px;
+}
+td {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+tr:nth-child(even) { background: #fafafa; }
+tr:hover { background: #fff4e6; }
